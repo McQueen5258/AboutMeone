@@ -1,0 +1,21 @@
+.skills {
+    width: 100vw;
+
+    margin: 20px 0px 50px;
+}
+
+
+.skill-tickets {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    justify-items: center;
+
+}
+
+.skills-title {
+    margin: 16px 23px;
+}

@@ -1,0 +1,7 @@
+/* 基本介绍，在中间部分的 */
+#basic-ticket {
+    display: flex;
+    flex-direction: row;
+
+    color: white;
+}

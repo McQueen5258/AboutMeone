@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+
+
+#bar {
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: rgb(0, 0, 0, 0.1);
+    backdrop-filter: saturate(180%) blur(20px);
+
+}
+
+
+/* 每个导航栏按钮 */
+.barLink {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+
+    text-decoration: none;
+}

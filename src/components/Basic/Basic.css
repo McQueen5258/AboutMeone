@@ -1,0 +1,11 @@
+#basic {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(../../assets/image/abstract06.jpg);
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

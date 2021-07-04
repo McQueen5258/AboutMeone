@@ -1,0 +1,9 @@
+#head-portrait {
+    height: 250px;
+    width: 250px;
+    background-image: url(./HPImage/Eric.jpg);
+    background-position: center;
+    background-size: 375px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
