@@ -1,6 +1,12 @@
 import React from 'react';
 import BarLink from './BarLink.js';
 import './Bar.css';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from "react-router-dom";
+
 let arr = [
     {
         href:"",
@@ -35,7 +41,9 @@ class Bar extends React.Component {
     render(){
         let s_arr =arr.map(function(obj,index){
             return(
+                <Router>
                 <BarLink key={index.toString()} href={obj.href} id={obj.id} text={obj.text} />
+                </Router>
             )
         })
         return (
