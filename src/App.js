@@ -11,9 +11,10 @@ import Contact from "./components/BarLink/Contact";
 
 import {
     BrowserRouter as Router,
+    Switch,
     Route,
     Link
-} from "react-router-dom";
+  } from "react-router-dom";
 
 function App() {
     return (
@@ -22,25 +23,34 @@ function App() {
             {/* <Bar id="bar" /> */}
             <div id="bar">
                 <div>
-                    <Link className="barLink" to="">Home</Link>
+                    <Link className="barLink" to="/">Home</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="About">About</Link>
+                    <Link className="barLink" to="/About">About</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="Portfolio">Portfolio</Link>
+                    <Link className="barLink" to="/Portfolio">Portfolio</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="Contact">Contact</Link>
+                    <Link className="barLink" to="/Contact">Contact</Link>
                 </div> 
             </div>
             
-
-            <Route path="/" component = {Home}/>
-            <Route path="/About" component = {About}/>
-            <Route path="/Portfolio" component = {Portfolio}/>
-            <Route path="/Contact" component = {Contact}/>
-            
+            <Switch>
+                
+                <Route path="/About" >
+                    <About />
+                </Route>
+                <Route path="/Portfolio">
+                    <Portfolio />
+                </Route>
+                <Route path="/Contact">
+                    <Contact/>
+                </Route>
+                <Route path="/" >
+                    <Home />
+                </Route>
+            </Switch>
 
              {/* 页脚 */}
             <Footer />
