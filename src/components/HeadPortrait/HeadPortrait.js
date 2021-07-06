@@ -6,7 +6,7 @@ class HeadPortrait extends React.Component {
 
     render(){
         return(
-            <div id='head-portrait'></div>
+            <div id='head-portrait' style={{backgroundImage: "url(image/HPImage/Eric.jpg)"}}></div>
         );
     }
 }

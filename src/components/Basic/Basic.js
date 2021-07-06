@@ -7,7 +7,7 @@ class Basic extends React.Component {
 
     render(){
         return(
-            <div id='basic'>
+            <div id='basic' style={{backgroundImage: "url(image/abstract06.jpg)"}}>
                 <BasicTicket />
             </div>
         );

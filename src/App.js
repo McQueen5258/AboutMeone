@@ -8,7 +8,7 @@ import Home from "./components/BarLink/Home";
 import About from "./components/BarLink/About";
 import Portfolio from "./components/BarLink/Portfolio";
 import Contact from "./components/BarLink/Contact";
-
+import Error from './components/BarLink/error';
 import {
     BrowserRouter as Router,
     Switch,
@@ -26,30 +26,31 @@ function App() {
                     <Link className="barLink" to="/">Home</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="/About">About</Link>
+                    <Link className="barLink" to="/about">About</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="/Portfolio">Portfolio</Link>
+                    <Link className="barLink" to="/portfolio">Portfolio</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="/Contact">Contact</Link>
+                    <Link className="barLink" to="/contact">Contact</Link>
                 </div> 
             </div>
             
             <Switch>
                 
-                <Route path="/About" >
+                <Route path="/about" >
                     <About />
                 </Route>
-                <Route path="/Portfolio">
+                <Route path="/portfolio">
                     <Portfolio />
                 </Route>
-                <Route path="/Contact">
+                <Route path="/contact">
                     <Contact/>
                 </Route>
                 <Route path="/" >
                     <Home />
                 </Route>
+                {/* <Route component={Error}/> */}
             </Switch>
 
              {/* 页脚 */}
