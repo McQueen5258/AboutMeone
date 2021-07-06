@@ -22,7 +22,7 @@ function App() {
             {/* <Bar id="bar" /> */}
             <div id="bar">
                 <div>
-                    <Link className="barLink" to="Home">Home</Link>
+                    <Link className="barLink" to="">Home</Link>
                 </div>
                 <div>
                     <Link className="barLink" to="About">About</Link>
@@ -36,7 +36,7 @@ function App() {
             </div>
             
 
-            <Route path="/Home" component = {Home}/>
+            <Route path="/" component = {Home}/>
             <Route path="/About" component = {About}/>
             <Route path="/Portfolio" component = {Portfolio}/>
             <Route path="/Contact" component = {Contact}/>
