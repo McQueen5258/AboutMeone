@@ -1,0 +1,10 @@
+.contactPage {
+    width: 100vw;
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
