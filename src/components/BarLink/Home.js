@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Basic from '../Basic/Basic';
 import Skills from '../Skills/Skills';
+import Footer from '../Footer/Footer';
 
 
 export default class Home extends Component {
@@ -11,6 +12,7 @@ export default class Home extends Component {
     <Basic id="basic" />
      {/* My skills */}
     <Skills className="skills" />
+    <Footer ThemeColor={{backgroundColor:"rgb(288, 4, 81)"}}/>
     </div>
     );
   }

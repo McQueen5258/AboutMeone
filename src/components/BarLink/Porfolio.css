@@ -1,3 +1,6 @@
 #porfolioPage {
     min-height: 100vh;
+    /* background-image: url(/image/GreenBGIEM.jpeg); */
+    font-family: 'Bubblegum Sans', cursive;
+    color: wheat;
 }

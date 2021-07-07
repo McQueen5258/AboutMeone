@@ -5,7 +5,7 @@ let items = [
     {
         "link":"https://mcqueen5258.github.io/flowers/",
         "img":"image/workImage/flower.png",
-        "name":"flowers"
+        "name":"Flowers"
     },
     {
         "link":"https://mcqueen5258.github.io/examination/forOuYang/assignment/",

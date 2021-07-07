@@ -8,3 +8,12 @@
     width: 100%;
     height: 100%;
 }
+.workLink > div div {
+    transform: translateY(40px);
+    transition: all 1s;
+
+}
+
+.workLink:hover > div:hover div {
+    transform: translateY(0px);
+}

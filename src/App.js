@@ -2,13 +2,14 @@ import React from 'react';
 
 import Bar from './Bar.js';
 
-import Footer from './components/Footer/Footer';
 
 import Home from "./components/BarLink/Home";
 import About from "./components/BarLink/About";
 import Portfolio from "./components/BarLink/Portfolio";
 import Contact from "./components/BarLink/Contact";
 import Error from './components/BarLink/error';
+
+import './App.css';
 import {
     BrowserRouter as Router,
     Switch,
@@ -37,7 +38,6 @@ function App() {
             </div>
             
             <Switch>
-                
                 <Route path="/about" >
                     <About />
                 </Route>
@@ -53,8 +53,6 @@ function App() {
                 {/* <Route component={Error}/> */}
             </Switch>
 
-             {/* 页脚 */}
-            <Footer />
         </Router>
     );
 }

@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import './work.css';
 
-
+let divStyle, sectionStyle;
 export default class Work extends Component {
     constructor(props){
         super(props)
+        this.mOver = this.mOver.bind(this);
+        // this.divStyle = this.divStyle.bind(this);
         
     }
+
+    mOver(e) {
+        // console.log(this);
+        // divStyle.transform = "translateY(0px)";
+        // console.log(e.target.children[0].style.transform);
+        // e.target.children[0].style.transform = "translateY(0px)";
+    }
     render() {
-        let sectionStyle ={
+        sectionStyle ={
                 backgroundImage:"url("+this.props.img+")",
                 backgroundSize:"100% 100%",
                 backgroundPosition:"center",
@@ -18,20 +27,21 @@ export default class Work extends Component {
                 alignItems: "flex-end"
 
         }
-        let divStyle = {
+        divStyle = {
             width: "100%",
             height: "40px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             fontSize: "20px",
-            color: "black",
-            backgroundColor:"rgb(255 4 39 / 69%)"
+            color: "wheat",
+            backgroundColor:"rgb(57, 117, 119, 0.69)",
+            // transform: "translateY(40px)"
         }
         return (
             <div className="work">
                 <a href={this.props.href} className="workLink">
-                    <div style={sectionStyle}>
+                    <div style={sectionStyle} onMouseEnter={(e) => this.mOver(e)} >
                         <div style={divStyle}>
                             {this.props.name}
                         </div>
