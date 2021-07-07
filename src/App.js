@@ -14,8 +14,10 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
-  } from "react-router-dom";
+    Link,
+    Redirect,
+    useLocation
+} from "react-router-dom";
 
 function App() {
     return (
@@ -34,10 +36,13 @@ function App() {
                 </div>
                 <div>
                     <Link className="barLink" to="/contact">Contact</Link>
-                </div> 
+                </div>
             </div>
-            
+
             <Switch>
+                <Route exact path="/" >
+                    <Home />
+                </Route>
                 <Route path="/about" >
                     <About />
                 </Route>
@@ -45,17 +50,29 @@ function App() {
                     <Portfolio />
                 </Route>
                 <Route path="/contact">
-                    <Contact/>
+                    <Contact />
                 </Route>
-                <Route path="/" >
-                    <Home />
+                <Route path="*">
+                    {/* <NoMatch /> */}
+                    <Error />
+
                 </Route>
-                {/* <Route component={Error}/> */}
             </Switch>
 
         </Router>
     );
 }
+// function NoMatch() {
+//     let location = useLocation();
+
+//     return (
+//         <div>
+//             <h3>
+//                 No match for <code>{location.pathname}</code>
+//             </h3>
+//         </div>
+//     );
+// }
 export default App;
 
 
