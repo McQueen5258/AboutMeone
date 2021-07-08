@@ -7,3 +7,11 @@
     border-radius: 50%;
     background-repeat: no-repeat;
 }
+
+@media screen and (max-width:800px ) {
+    #head-portrait {
+        height: 170px;
+        width: 170px;
+        background-size: 280px;
+    }
+}
