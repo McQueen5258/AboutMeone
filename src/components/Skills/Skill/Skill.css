@@ -27,3 +27,8 @@
         width: 300px;
     }
 }
+@media screen and (max-width:740px) {
+    .skill {
+        width: 220px;
+    }
+}
