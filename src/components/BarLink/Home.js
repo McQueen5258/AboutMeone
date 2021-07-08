@@ -12,7 +12,7 @@ export default class Home extends Component {
     <Basic id="basic" />
      {/* My skills */}
     <Skills className="skills" />
-    <Footer ThemeColor={{backgroundColor:"rgb(288, 4, 81)"}}/>
+    <Footer ThemeColor={"rgb(288, 4, 81)"}/>
     </div>
     );
   }

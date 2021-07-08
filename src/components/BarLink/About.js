@@ -28,7 +28,7 @@ export default class About extends Component {
         
 
         {/* 页脚 */}
-        <Footer />
+        <Footer ThemeColor="rgb(184, 124, 94)"/>
       </div>
     );
   }
