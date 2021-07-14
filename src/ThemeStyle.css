@@ -1,0 +1,9 @@
+.Basic-light {
+    filter: brightness(100%);
+    transition: all 1s ease 0s;
+}
+
+.Basic-dark {
+    filter: brightness(50%);
+    transition: all 1s ease 0s;
+}

@@ -23,15 +23,8 @@ export const themeContext = createContext(null);
 
 
 function App() {
-    const [theme, setTheme] = useState('dark');
-    function click() {
-        if (theme == 'light') {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
+    const [theme, setTheme] = useState('light');
         
-    }
     return (
         <Router>
             <themeContext.Provider value={{theme, setTheme}} >
