@@ -36,7 +36,10 @@ function App() {
             first = true;
         }, [theme]); 
         useEffect(() => {
+            if (localStorage.getItem("lastTheme")) {
             setTheme(localStorage.getItem("lastTheme"));
+                
+            }
         }); 
     return (
         <Router>
