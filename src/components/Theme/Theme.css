@@ -1,0 +1,19 @@
+.theme-btn {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+
+    width: 35px;
+    height: 35px;
+
+    background-size: 100%;
+    background-position: center;
+}
+
+/* .theme-btn-light {
+    
+}
+
+.theme-btn-dark {
+
+} */

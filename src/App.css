@@ -1,3 +1,18 @@
 body {
     font-family: "Lucida Console", "Courier New", monospace;
 }
+
+.light {
+    color: black;
+
+    transition: all 1s;
+}
+
+.dark {
+    color: white;
+
+    background-image: none;
+    background-color: black;
+
+    transition: all 1s;
+}
