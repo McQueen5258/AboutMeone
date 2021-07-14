@@ -36,7 +36,7 @@ function App() {
             first = true;
         }, [theme]); 
         useEffect(() => {
-            if ("null" == localStorage.getItem("lastTheme")) {
+            if ("null" !== localStorage.getItem("lastTheme")) {
             setTheme(localStorage.getItem("lastTheme"));
                 
             }
