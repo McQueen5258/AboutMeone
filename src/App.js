@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext,useEffect } from 'react';
 
 import Bar from './Bar.js';
 
@@ -21,10 +21,23 @@ import {
 } from "react-router-dom";
 export const themeContext = createContext(null);
 
+let first = false;
 
 function App() {
     const [theme, setTheme] = useState('light');
-        
+    // window.onpageshow = function(){
+    //     setTheme(localStorage.getItem("lastTheme"));
+    // };     
+    
+        useEffect(() => {
+            if (first) {
+                localStorage.setItem("lastTheme", theme);
+            }
+            first = true;
+        }, [theme]); 
+        useEffect(() => {
+            setTheme(localStorage.getItem("lastTheme"));
+        }); 
     return (
         <Router>
             <themeContext.Provider value={{theme, setTheme}} >
