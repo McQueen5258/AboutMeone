@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component,lazy } from 'react';
 import './DisplayWall.css';
-import Contents from '../works/Contents';
-import Contact from '../Contact/Contact';
+const Contents = lazy(() => import('../works/Contents'));
+const Contact = lazy(() => import('../Contact/Contact'));
 export default class DisplayWall extends Component {
     render() {
         return (

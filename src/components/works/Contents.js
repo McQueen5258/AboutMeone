@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import Work from './work/work';
+import React, { Component, lazy} from 'react';
+// import Work from './work/work';
 import './Contents.css';
+const Work = lazy(() => import('./work/work'));
+
 let items = [
     {
         "link":"https://mcqueen5258.github.io/flowers/",
