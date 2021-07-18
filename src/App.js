@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext,useEffect } from 'react';
+import React, { useState, createContext, useContext, useEffect } from 'react';
 
 import Bar from './Bar.js';
 
@@ -30,12 +30,14 @@ function App() {
     // };     
     
         useEffect(() => {
+            // The first time a user enters a web page again, there is no need to modify the local storage
             if (first) {
                 localStorage.setItem("lastTheme", theme);
             }
             first = true;
         }, [theme]); 
         useEffect(() => {
+            // New users don't need to get localStorage when they enter the page for the first time
             if ("null" !== localStorage.getItem("lastTheme")) {
             setTheme(localStorage.getItem("lastTheme"));
                 
