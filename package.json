@@ -4,9 +4,12 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "i18next": "^20.3.3",
+    "i18next-browser-languagedetector": "^6.1.2",
     "localStorage": "^1.0.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-i18next": "^11.11.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "2.0.3"

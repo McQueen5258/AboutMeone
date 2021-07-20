@@ -1,7 +1,8 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
-
+import { useTranslation } from 'react-i18next';
+// import i18n from'./i18n'
 import Bar from './Bar.js';
-
+import './i18n';
 
 import Home from "./components/BarLink/Home";
 import About from "./components/BarLink/About";
@@ -16,8 +17,6 @@ import {
     Switch,
     Route,
     Link,
-    Redirect,
-    useLocation
 } from "react-router-dom";
 export const themeContext = createContext(null);
 
@@ -25,6 +24,7 @@ let first = false;
 
 function App() {
     const [theme, setTheme] = useState('light');
+    const { t, i18n } = useTranslation();
     // window.onpageshow = function(){
     //     setTheme(localStorage.getItem("lastTheme"));
     // };     
@@ -42,11 +42,22 @@ function App() {
             setTheme(localStorage.getItem("lastTheme"));
                 
             }
-        }); 
+        });
     return (
         <Router>
             <themeContext.Provider value={{theme, setTheme}} >
             <div className={`${theme}`}>
+            <button 
+                onClick={()=>i18n.changeLanguage(i18n.language=='en'?'zh':'en')
+            }
+            style={{
+                position: "fixed",
+                top: "60px",
+                zIndex: "1"
+            }}
+            >
+                {i18n.language=='en'?'zh':'en'}
+            </button>
             {/* 导航栏 */}
             {/* <Bar id="bar" /> */}
             <div id="bar">
@@ -89,6 +100,7 @@ function App() {
 
                 </Route>
             </Switch>
+            <h1>{t('welcome')}</h1>
             </div>
             </themeContext.Provider>
         </Router>

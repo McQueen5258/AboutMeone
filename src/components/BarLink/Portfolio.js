@@ -3,12 +3,14 @@ import React, { Component, lazy, Suspense } from 'react';
 import './Porfolio.css';
 import Footer from '../Footer/Footer';
 import Loading from '../Loading/Loading';
+import { useTranslation } from 'react-i18next';
+
+import '../../i18n';
 const DisplayWall = lazy(() => import('../DisplayWall/DisplayWall'));
 
+export default function Porfolio() {
+    const { t, i18n } = useTranslation();
 
-
-export default class Porfolio extends Component {
-        render() {
         return (
             <div id="porfolioPage">
                 {/* Exhibition works */}
@@ -22,4 +24,3 @@ export default class Porfolio extends Component {
             </div>
         );
     }
-}
