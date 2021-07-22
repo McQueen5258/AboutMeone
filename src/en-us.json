@@ -1,6 +1,4 @@
 {
-    "home":"Home",
-    "welcome":"Welcome To Home",
     "portfolio":"PORTFOLIO",
     "Flowers":"Flowers",
     "Assignment":"Assignment",
@@ -8,5 +6,19 @@
     "Moments":"Moments",
     "CarRentalWebsite":"Car rental website",
     "KIDO_BANK":"KIDO BANK",
-    "more":"MORE"
+    "more":"MORE",
+    
+    "Home":"Home",
+    "About":"About",
+    "Portfolio":"Portfolio",
+    "Contact":"Contact",
+
+    "FormText":"In March 2019, he joined tadpole practice school. He is a student of tadpole practice school, majoring in programming.",
+
+    "LET'S CHAT":"LET'S CHAT",
+    
+    "My Skills":"My Skills",
+
+    "About Me":"About Me",
+    "Hello There, I'm Eric":"Hello There, I'm Eric"
 }

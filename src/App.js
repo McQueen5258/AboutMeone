@@ -1,8 +1,8 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import './i18n';
 // import i18n from'./i18n'
 import Bar from './Bar.js';
-import './i18n';
 
 import Home from "./components/BarLink/Home";
 import About from "./components/BarLink/About";
@@ -47,31 +47,45 @@ function App() {
         <Router>
             <themeContext.Provider value={{theme, setTheme}} >
             <div className={`${theme}`}>
-            <button 
+            <div 
                 onClick={()=>i18n.changeLanguage(i18n.language=='en'?'zh':'en')
             }
             style={{
                 position: "fixed",
-                top: "60px",
+                top: "115px",
+                right: "30px",
                 zIndex: "1"
             }}
             >
-                {i18n.language=='en'?'zh':'en'}
-            </button>
+                <div 
+                    style={
+                        {
+                            backgroundImage:"url('image/translation/翻译.svg')",
+                            backgroundSize: "100%",
+                            backgroundPosition: 'center',
+                            height: "30px",
+                            width: "30px",
+                        }
+                    }
+                ></div>
+                <div>
+                {/* {i18n.language=='en'?'zh':'en'} */}
+                </div>
+            </div>
             {/* 导航栏 */}
             {/* <Bar id="bar" /> */}
             <div id="bar">
                 <div>
-                    <Link className="barLink" to="/">Home</Link>
+                    <Link className="barLink" to="/">{t('Home')}</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="/about">About</Link>
+                    <Link className="barLink" to="/about">{t('About')}</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="/portfolio">Portfolio</Link>
+                    <Link className="barLink" to="/portfolio">{t('Portfolio')}</Link>
                 </div>
                 <div>
-                    <Link className="barLink" to="/contact">Contact</Link>
+                    <Link className="barLink" to="/contact">{t('Contact')}</Link>
                 </div>
             </div>
             <Theme 
@@ -100,7 +114,6 @@ function App() {
 
                 </Route>
             </Switch>
-            <h1>{t('welcome')}</h1>
             </div>
             </themeContext.Provider>
         </Router>

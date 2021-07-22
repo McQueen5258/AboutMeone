@@ -4,10 +4,11 @@ import Footer from '../Footer/Footer';
 import '../About/About.css';
 // import PageLogo from '../pageLogo/PageLogo';
 import Loading from '../Loading/Loading';
+import { useTranslation } from 'react-i18next';
 const PageLogo = lazy(() => import('../pageLogo/PageLogo'));
 
-export default class About extends Component {
-  render() {
+export default function About() {
+    const [t, i18n] = useTranslation()
     return (
         <div>
           <Suspense fallback={<Loading />} >
@@ -17,13 +18,13 @@ export default class About extends Component {
               backgroundImage: "url(image/01151148_f90170be11.jpeg)"
             }} >
             <div className="about-title">
-              <h1>ABOUT ME</h1>
+              <h1>{t('About Me')}</h1>
               <PageLogo />
             </div>
 
 
             <div className="AboutMe-text">
-              <p>你好呀，我是艾克。</p>
+              <p>{t("Hello There, I'm Eric")}</p>
             </div>
             <div>
 
@@ -37,4 +38,3 @@ export default class About extends Component {
       </div>
     );
   }
-}

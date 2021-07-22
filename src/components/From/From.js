@@ -1,13 +1,13 @@
 import React from 'react';
 import './From.css';
+import { useTranslation } from 'react-i18next';
+import '../../i18n';
 
-class From extends React.Component {
-
-    render(){
+function From() {
+    const [t, i18n] = useTranslation();
         return(
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019年三月加入蝌蚪实务学堂，是蝌蚪实务学堂的学生，在学习编程专业。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{t('FormText')}</p>
         );
-    }
 }
 
 export default From;

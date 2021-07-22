@@ -6,12 +6,7 @@ import { useTranslation } from 'react-i18next';
 const Work = lazy(() => import('./work/work'));
 
 
-// console.log(skillsData[Object.keys(skillsData)[0]].title);
-// let s_skills = Object.keys(skillsData).map(function(obj, index){
-//     return(
-//         <Skill key={index.toString()}title={skillsData[obj].title} progress={skillsData[obj].progress}/>
-//     )
-// });
+
 export default function Contents() {
     const [t, i18n] = useTranslation();
     let items = [
