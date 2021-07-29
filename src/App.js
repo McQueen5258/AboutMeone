@@ -111,7 +111,6 @@ function App() {
                 <Route path="*">
                     {/* <NoMatch /> */}
                     <Error />
-
                 </Route>
             </Switch>
             </div>
