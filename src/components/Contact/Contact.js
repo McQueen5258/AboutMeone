@@ -3,12 +3,15 @@ import './Contact.css';
 import ContactData from './Contact-data.json';
 import { useTranslation } from 'react-i18next';
 import '../../i18n';
+
+import Button from '@material-ui/core/Button';
+
 function Contact(props) {
     const [t, i18n] = useTranslation();
     return (
-        <div className='contact-mode'>
-            <a href={ContactData[props.mode].href}>{t("LET'S CHAT")}</a>
-        </div>
+        <Button className='contact-mode' variant="outlined" color="primary" href={ContactData[props.mode].href}>
+            {t("LET'S CHAT")}
+        </Button>
     );
 }
 

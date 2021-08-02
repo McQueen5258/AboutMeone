@@ -1,8 +1,5 @@
 import React from 'react';
 import './ProgressBar.css';
-function styleFunc(e) {
-    console.log("可以访问这个函数！！");
-}
 class ProgressBar extends React.Component {
 
 

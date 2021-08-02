@@ -1,6 +1,17 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './i18n';
+import Button from '@material-ui/core/Button';
+import { AppBar } from '@material-ui/core';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import SettingsIcon from '@material-ui/icons/Settings';
+import Slide from '@material-ui/core/Slide';
+import PropTypes from 'prop-types';
+import Toolbar from '@material-ui/core/Toolbar';
+
+
+
+
 // import i18n from'./i18n'
 import Bar from './Bar.js';
 
@@ -22,98 +33,141 @@ export const themeContext = createContext(null);
 
 let first = false;
 
+function HideOnScroll(props) {
+    const { children, window } = props;
+    // Note that you normally won't need to set the window ref as useScrollTrigger
+    // will default to window.
+    // This is only being set here because the demo is in an iframe.
+    const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+    return (
+        <Slide appear={false} direction="down" in={!trigger}>
+            {children}
+        </Slide>
+    );
+}
+
+HideOnScroll.propTypes = {
+    children: PropTypes.element.isRequired,
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
+};
+
+
 function App() {
     const [theme, setTheme] = useState('light');
     const { t, i18n } = useTranslation();
     // window.onpageshow = function(){
     //     setTheme(localStorage.getItem("lastTheme"));
     // };     
-    
-        useEffect(() => {
-            // The first time a user enters a web page again, there is no need to modify the local storage
-            if (first) {
-                localStorage.setItem("lastTheme", theme);
-            }
-            first = true;
-        }, [theme]); 
-        useEffect(() => {
-            // New users don't need to get localStorage when they enter the page for the first time
-            if ("null" !== localStorage.getItem("lastTheme")) {
+
+    useEffect(() => {
+        // The first time a user enters a web page again, there is no need to modify the local storage
+        if (first) {
+            localStorage.setItem("lastTheme", theme);
+        }
+        first = true;
+    }, [theme]);
+    useEffect(() => {
+        // New users don't need to get localStorage when they enter the page for the first time
+        if ("null" !== localStorage.getItem("lastTheme")) {
             setTheme(localStorage.getItem("lastTheme"));
-                
-            }
-        });
+
+        }
+    });
     return (
         <Router>
-            <themeContext.Provider value={{theme, setTheme}} >
-            <div className={`${theme}`}>
-            <div 
-                onClick={()=>i18n.changeLanguage(i18n.language=='en'?'zh':'en')
-            }
-            style={{
-                position: "fixed",
-                top: "115px",
-                right: "30px",
-                zIndex: "1"
-            }}
-            >
-                <div 
-                    style={
-                        {
-                            backgroundImage:"url('image/translation/翻译.svg')",
-                            backgroundSize: "100%",
-                            backgroundPosition: 'center',
-                            height: "30px",
-                            width: "30px",
+            <themeContext.Provider value={{ theme, setTheme }} >
+
+                <div className={`${theme}`}>
+                    <div
+                        onClick={() => i18n.changeLanguage(i18n.language == 'en' ? 'zh' : 'en')
                         }
-                    }
-                ></div>
-                <div>
-                {/* {i18n.language=='en'?'zh':'en'} */}
+                        style={{
+                            position: "fixed",
+                            top: "115px",
+                            right: "30px",
+                            zIndex: "1"
+                        }}
+                    >
+                        <div
+                            style={
+                                {
+                                    backgroundImage: "url('image/translation/翻译.svg')",
+                                    backgroundSize: "100%",
+                                    backgroundPosition: 'center',
+                                    height: "30px",
+                                    width: "30px",
+                                }
+                            }
+                        ></div>
+                        <div>
+                            {/* {i18n.language=='en'?'zh':'en'} */}
+                        </div>
+                    </div>
+                    {/* 导航栏 */}
+                    {/* <Bar id="bar" /> */}
+                    <HideOnScroll >
+                        <AppBar id="bar">
+                            <Button style={{
+                                textTransform: 'none',
+                                height: '100%',
+                                width: '100%'
+                            }}>
+                                <Link className="barLink" to="/">{t('Home')}</Link>
+                            </Button>
+                            <Button style={{
+                                textTransform: 'none',
+                                height: '100%',
+                                width: '100%'
+                            }}>
+                                <Link className="barLink" to="/about">{t('About')}</Link>
+                            </Button>
+                            <Button style={{
+                                textTransform: 'none',
+                                height: '100%',
+                                width: '100%'
+                            }}>
+                                <Link className="barLink" to="/portfolio">{t('Portfolio')}</Link>
+                            </Button>
+                            <Button style={{
+                                textTransform: 'none',
+                                height: '100%',
+                                width: '100%'
+                            }}>
+                                <Link className="barLink" to="/contact">{t('Contact')}</Link>
+                            </Button>
+                        </AppBar>
+                    </HideOnScroll>
+                    <Theme
+                        style={{
+                            position: "fixed",
+                            top: "60px",
+                            right: "10px"
+                        }}
+                    />
+                    <Switch>
+                        <Route exact path="/" >
+                            <Home />
+                        </Route>
+                        <Route path="/about" >
+                            <About />
+                        </Route>
+                        <Route path="/portfolio">
+                            <Portfolio />
+                        </Route>
+                        <Route path="/contact">
+                            <Contact />
+                        </Route>
+                        <Route path="*">
+                            {/* <NoMatch /> */}
+                            <Error />
+                        </Route>
+                    </Switch>
                 </div>
-            </div>
-            {/* 导航栏 */}
-            {/* <Bar id="bar" /> */}
-            <div id="bar">
-                <div>
-                    <Link className="barLink" to="/">{t('Home')}</Link>
-                </div>
-                <div>
-                    <Link className="barLink" to="/about">{t('About')}</Link>
-                </div>
-                <div>
-                    <Link className="barLink" to="/portfolio">{t('Portfolio')}</Link>
-                </div>
-                <div>
-                    <Link className="barLink" to="/contact">{t('Contact')}</Link>
-                </div>
-            </div>
-            <Theme 
-                style={{
-                    position: "fixed",
-                    top: "60px",
-                    right: "10px"
-                }}
-            />
-            <Switch>
-                <Route exact path="/" >
-                    <Home />
-                </Route>
-                <Route path="/about" >
-                    <About />
-                </Route>
-                <Route path="/portfolio">
-                    <Portfolio />
-                </Route>
-                <Route path="/contact">
-                    <Contact />
-                </Route>
-                <Route path="*">
-                    {/* <NoMatch /> */}
-                    <Error />
-                </Route>
-            </Switch>
-            </div>
             </themeContext.Provider>
         </Router>
     );

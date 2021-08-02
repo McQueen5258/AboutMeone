@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './work.css';
+import Card from '@material-ui/core/Card';
 
 let divStyle, sectionStyle;
 export default class Work extends Component {
@@ -39,7 +40,7 @@ export default class Work extends Component {
             // transform: "translateY(40px)"
         }
         return (
-            <div className="work">
+            <Card className="work">
                 <a href={this.props.href} className="workLink">
                     <div style={sectionStyle} onMouseEnter={(e) => this.mOver(e)} >
                         <div style={divStyle}>
@@ -47,7 +48,7 @@ export default class Work extends Component {
                         </div>
                     </div>
                 </a>
-            </div>
+            </Card>
         );
     }
 }
