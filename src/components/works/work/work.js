@@ -1,55 +1,120 @@
 import React, { Component } from 'react';
 import './work.css';
-import Card from '@material-ui/core/Card';
 
-let divStyle, sectionStyle;
-export default class Work extends Component {
-    constructor(props){
-        super(props)
-        this.mOver = this.mOver.bind(this);
-        // this.divStyle = this.divStyle.bind(this);
-        
-    }
+import {
+    Card,
+    CardContent,
+    CardMedia,
+    CardActionArea,
+    CardActions,
+    Typography,
+    Button,
+    withStyles
+} from '@material-ui/core';
 
-    mOver(e) {
-        // console.log(this);
-        // divStyle.transform = "translateY(0px)";
-        // console.log(e.target.children[0].style.transform);
-        // e.target.children[0].style.transform = "translateY(0px)";
-    }
+// let divStyle, sectionStyle;
+
+const styles = ({ spacing: { unit } }) => ({
+    root: {
+        maxWidth: 300,
+        maxHeight:400
+    },
+})
+
+
+
+export default withStyles(styles)(class Work extends Component {
+
     render() {
-        sectionStyle ={
-                backgroundImage:"url("+this.props.img+")",
-                backgroundSize:"100% 100%",
-                backgroundPosition:"center",
-                backgroundRepeat:"repeat",
-                display:"flex",
-                justifyContent: "center",
-                alignItems: "flex-end"
-
-        }
-        divStyle = {
-            width: "100%",
-            height: "40px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "20px",
-            color: "wheat",
-            backgroundColor:"rgb(57, 117, 119, 0.69)",
-            // transform: "translateY(40px)"
-        }
+        const { classes } = this.props;
         return (
-            <Card className="work">
-                <a href={this.props.href} className="workLink">
-                    <div style={sectionStyle} onMouseEnter={(e) => this.mOver(e)} >
-                        <div style={divStyle}>
+            <Card className={classes.root+" work"}>
+                <CardActionArea component="a" href={this.props.href}>
+                    <CardMedia
+                        component="img"
+                        alt="Contemplative Reptile"
+                        Height="140"
+                        image={this.props.img}
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                        <Typography style={{display: 'flex'}} gutterBottom variant="h5" component="h2">
                             {this.props.name}
-                        </div>
-                    </div>
-                </a>
+                        </Typography>
+                        <Typography style={{display: 'flex'}} variant="body2" color="textSecondary" component="p">
+                            介绍
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button side="small" color="primary" component="a" href={this.props.href}>
+                        Preview
+                    </Button>
+                </CardActions>
+
             </Card>
         );
     }
-}
+})
+// <Card className="work" >
+//     <a href={props.href} className="workLink">
+//         <div style={sectionStyle} onMouseEnter={(e) => mOver(e)} >
+//             <div style={divStyle}>
+//                 {props.name}
+//             </div>
+//         </div>
+//     </a>
+// </Card>
 
+{/* 
+<Card className={useStyles.root}>
+    <CardActionArea>
+        <CardMedia
+            className={classes.media}
+            image="https://aboutmeone.vercel.app/image/workImage/CarRental.png"
+            title="Contemplative Reptile"
+        />
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+                Lizard
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                across all continents except Antarctica
+            </Typography>
+        </CardContent>
+    </CardActionArea>
+    <CardActions>
+        <Button size="small" color="primary">
+            Share
+        </Button>
+        <Button size="small" color="primary">
+            Learn More
+        </Button>
+    </CardActions>
+</Card> 
+*/}
+
+
+
+
+// 2.0
+
+{/* <Card className={useStyles.root}>
+                <CardActionArea>
+                    <CardMedia
+                        className={useStyles.media}
+                        image="https://aboutmeone.vercel.app/image/workImage/CarRental.png"
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Lizard
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                            across all continents except Antarctica
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card> */}

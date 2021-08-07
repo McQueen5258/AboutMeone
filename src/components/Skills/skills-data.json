@@ -1,38 +1,38 @@
 {
         "iOS":{
             "title":"iOS",
-            "progress":"60%"
+            "progress":"60"
         },
         "HTMLCSS":{
             "title":"HTML/CSS",
-            "progress":"60%"
+            "progress":"60"
         },
         "JS":{
             "title":"Javascript",
-            "progress":"75%"
+            "progress":"75"
         },
         "React":{
             "title":"React",
-            "progress":"65%"
+            "progress":"65"
         },
         "Jquery":{
             "title":"Jquery",
-            "progress":"68%"
+            "progress":"68"
         },
         "Java":{
             "title":"Java",
-            "progress":"45%"
+            "progress":"45"
         },
         "C/C++":{
             "title":"C/C++",
-            "progress":"43%"
+            "progress":"43"
         },
         "Photography":{
             "title":"Photography",
-            "progress":"69%"
+            "progress":"69"
         },
         "Photoshop":{
             "title":"Photoshop",
-            "progress":"10%"
+            "progress":"10"
         }
 }

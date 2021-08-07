@@ -1,10 +1,9 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './i18n';
-import Button from '@material-ui/core/Button';
-import { AppBar } from '@material-ui/core';
+import { AppBar, IconButton, Button } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import SettingsIcon from '@material-ui/icons/Settings';
+import { Translate } from '@material-ui/icons';
 import Slide from '@material-ui/core/Slide';
 import PropTypes from 'prop-types';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -84,29 +83,21 @@ function App() {
 
                 <div className={`${theme}`}>
                     <div
-                        onClick={() => i18n.changeLanguage(i18n.language == 'en' ? 'zh' : 'en')
-                        }
                         style={{
                             position: "fixed",
-                            top: "115px",
+                            top: "70px",
                             right: "30px",
                             zIndex: "1"
                         }}
                     >
-                        <div
-                            style={
-                                {
-                                    backgroundImage: "url('image/translation/翻译.svg')",
-                                    backgroundSize: "100%",
-                                    backgroundPosition: 'center',
-                                    height: "30px",
-                                    width: "30px",
-                                }
+                        <Theme /> 
+                        <IconButton
+                            color='primary'
+                            onClick={() => i18n.changeLanguage(i18n.language == 'en' ? 'zh' : 'en')
                             }
-                        ></div>
-                        <div>
-                            {/* {i18n.language=='en'?'zh':'en'} */}
-                        </div>
+                        >
+                                <Translate />
+                        </IconButton>
                     </div>
                     {/* 导航栏 */}
                     {/* <Bar id="bar" /> */}
@@ -142,13 +133,6 @@ function App() {
                             </Button>
                         </AppBar>
                     </HideOnScroll>
-                    <Theme
-                        style={{
-                            position: "fixed",
-                            top: "60px",
-                            right: "10px"
-                        }}
-                    />
                     <Switch>
                         <Route exact path="/" >
                             <Home />

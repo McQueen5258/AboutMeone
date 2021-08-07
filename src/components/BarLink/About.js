@@ -5,6 +5,7 @@ import '../About/About.css';
 // import PageLogo from '../pageLogo/PageLogo';
 import Loading from '../Loading/Loading';
 import { useTranslation } from 'react-i18next';
+import { Typography } from '@material-ui/core';
 const PageLogo = lazy(() => import('../pageLogo/PageLogo'));
 
 export default function About() {
@@ -17,8 +18,11 @@ export default function About() {
             {
               backgroundImage: "url(image/01151148_f90170be11.jpeg)"
             }} >
+              
             <div className="about-title">
-              <h1>{t('About Me')}</h1>
+              <Typography variant="h5" component="h2">
+                {t('About Me')}
+              </Typography>
               <PageLogo />
             </div>
 
